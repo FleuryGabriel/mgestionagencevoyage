@@ -20,7 +20,7 @@ public class MicroservicesVolApplication {
 	@Bean
     CommandLineRunner start(IVolRepository volRepository) {
         return (args) -> {
-            Stream.of(new Vol("Madrid","Vol pour Madrid"), new Vol("Paris","Vol pour Paris")).forEach((v) -> {
+            Stream.of(new Vol("Madrid","Vol pour Madrid"), new Vol("Paris","Vol pour Paris"), new Vol("New York","Vol pour USA"), new Vol("Sao-Paulo","Vol pour Sao-Paulo"), new Vol("London","Vol pour London")).forEach((v) -> {
                 volRepository.save(v);
             });
         };

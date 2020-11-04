@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.mvol.configuration.ApplicationPropertiesConfiguration;
 import com.mvol.entity.Vol;
 import com.mvol.service.IVolService;
 import com.mvol.service.VolServiceImpl;
@@ -21,6 +22,9 @@ public class VolController {
 	@Autowired
 	private IVolService vServ = new VolServiceImpl();
 	
+	@Autowired
+	private ApplicationPropertiesConfiguration apc;
+	
 	@GetMapping(value = "/getById/{pId}")
 	public Vol getVolById(@PathVariable(name = "pId") int id) {
 		return vServ.getVolById(id);
@@ -28,7 +32,12 @@ public class VolController {
 
 	@GetMapping(value = "/getAll")
 	public List<Vol> getAllVol() {
-		return vServ.getAllVol();
+		//Demo de la nécessité de spring cloud
+		List<Vol> vols = vServ.getAllVol();
+		List<Vol> listeLimite = vols.subList(0, apc.getLimitDeVols());
+		
+		
+		return listeLimite;
 	}
 
 	@PostMapping(value = "/add")
