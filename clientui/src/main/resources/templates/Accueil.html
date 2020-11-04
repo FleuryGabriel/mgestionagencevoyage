@@ -21,6 +21,20 @@
 			<p th:text = "${v.description}">
 		</div>
 	</div>
+	<br>
+	<div class="row">
+		<div th:each="r:${reservations}" class="col-md-4">
+			<h2 th:text="${r.dateReservation}"></h2>
+			<p th:text = "${r.quantite}">
+		</div>
+	</div>
+	<br>
+	<div class="row">
+		<div th:each="p:${paiements}" class="col-md-4">
+			<h2 th:text="${p.montant}"></h2>
+			<p th:text = "${p.numeroCarte}">
+		</div>
+	</div>
 
 </body>
 </html>

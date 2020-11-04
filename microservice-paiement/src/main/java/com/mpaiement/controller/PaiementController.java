@@ -16,7 +16,7 @@ import com.mpaiement.service.IPaiementService;
 import com.mpaiement.service.PaiementServiceImpl;
 
 
-@RestController(value = "/paiement")
+@RestController
 public class PaiementController {
 	
 	@Autowired
@@ -27,22 +27,22 @@ public class PaiementController {
 		return pServ.getPaiementById(id);
 	}
 
-	@GetMapping(value = "/getAll")
+	@GetMapping(value = "/getAllPaiement")
 	public List<Paiement> getAllPaiement() {
 		return pServ.getAllPaiement();
 	}
 
-	@PostMapping(value = "/add")
+	@PostMapping(value = "/addPaiement")
 	public Paiement addPaiement(@RequestBody Paiement vIn) {
 		return pServ.addPaiement(vIn);
 	}
 
-	@PutMapping(value = "update")
+	@PutMapping(value = "updatePaiement")
 	public Paiement updatePaiement(@RequestBody Paiement vIn) {
 		return pServ.updatePaiement(vIn);
 	}
 
-	@DeleteMapping(value = "delete/{pId}")
+	@DeleteMapping(value = "deletePaiement/{pId}")
 	public void deletePaiement(@PathVariable(value = "pId") int id) {
 		pServ.deletePaiement(pServ.getPaiementById(id));
 	}

@@ -16,33 +16,33 @@ import com.mreservation.service.IReservationService;
 import com.mreservation.service.ReservationServiceImpl;
 
 
-@RestController(value = "/reservation")
+@RestController
 public class ReservationController {
 	
 	@Autowired
 	private IReservationService rServ = new ReservationServiceImpl();
 	
-	@GetMapping(value = "/getById/{pId}")
+	@GetMapping(value = "/getReservationById/{pId}")
 	public Reservation getReservationById(@PathVariable(name = "pId") int id) {
 		return rServ.getReservationById(id);
 	}
 
-	@GetMapping(value = "/getAll")
+	@GetMapping(value = "/getAllReservation")
 	public List<Reservation> getAllReservation() {
 		return rServ.getAllReservation();
 	}
 
-	@PostMapping(value = "/add")
+	@PostMapping(value = "/addReservation")
 	public Reservation addReservation(@RequestBody Reservation vIn) {
 		return rServ.addReservation(vIn);
 	}
 
-	@PutMapping(value = "update")
+	@PutMapping(value = "updateReservation")
 	public Reservation updateReservation(@RequestBody Reservation vIn) {
 		return rServ.updateReservation(vIn);
 	}
 
-	@DeleteMapping(value = "delete/{pId}")
+	@DeleteMapping(value = "deleteReservation/{pId}")
 	public void deleteReservation(@PathVariable(value = "pId") int id) {
 		rServ.deleteReservation(rServ.getReservationById(id));
 	}

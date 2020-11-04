@@ -1,15 +1,7 @@
-package com.mpaiement.entity;
+package com.clientui.beans;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+public class PaiementBean {
 
-@Entity
-public class Paiement {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
 	private Integer idReservation;
@@ -17,25 +9,14 @@ public class Paiement {
 	private Long numeroCarte;
 	
 	
-	public Paiement() {
+	public PaiementBean() {
 	}
-	
-	
-	
-	public Paiement(Integer montant, Long numeroCarte) {
-		super();
-		this.montant = montant;
-		this.numeroCarte = numeroCarte;
-	}
-
-
-
-	public Paiement(Integer idReservation, Integer montant, Long numeroCarte) {
+	public PaiementBean(Integer idReservation, Integer montant, Long numeroCarte) {
 		this.idReservation = idReservation;
 		this.montant = montant;
 		this.numeroCarte = numeroCarte;
 	}
-	public Paiement(int id, Integer idReservation, Integer montant, Long numeroCarte) {
+	public PaiementBean(int id, Integer idReservation, Integer montant, Long numeroCarte) {
 		this.id = id;
 		this.idReservation = idReservation;
 		this.montant = montant;
