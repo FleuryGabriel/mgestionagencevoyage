@@ -15,7 +15,7 @@ import com.mvol.entity.Vol;
 import com.mvol.service.IVolService;
 import com.mvol.service.VolServiceImpl;
 
-@RestController(value = "/vol")
+@RestController
 public class VolController {
 
 	@Autowired

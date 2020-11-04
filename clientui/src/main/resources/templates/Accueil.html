@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>MAgenceVoyage</title>
+
+<link rel="stylesheet" type="text/css"
+	href="webjars/bootstrap/4.0.0-2/css/bootstrap.min.css">
+
+</head>
+<body>
+
+	<script type="text/javascript"
+		src="webjars/bootstrap/4.0.0-2/js/bootstrap.min.js"></script>
+
+	<h1>Application Agence Voyage</h1>
+	
+	<div class="row">
+		<div th:each="v:${vols}" class="col-md-4">
+			<h2 th:text="${v.titre}"></h2>
+			<p th:text = "${v.description}">
+		</div>
+	</div>
+
+</body>
+</html>

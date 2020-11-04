@@ -27,7 +27,7 @@ public class SpringFoxConfig{
           .paths(PathSelectors.any())                          
           .build();                                           
     }
-//Vous pouvez également accéder à une version au format HTML à l'adresse suivante : http://localhost:8081/rest/swagger-ui.html
+//Vous pouvez également accéder à une version au format HTML à l'adresse suivante : http://localhost:9093/swagger-ui.html
 }
 
 

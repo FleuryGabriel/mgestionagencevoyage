@@ -1,39 +1,24 @@
-package com.mvol.entity;
+package com.clientui.beans;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
-@Entity
-public class Vol {
+public class VolBean {
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
 	private String titre;
 	private String description;
 	private String image;
 	private Double prix;
 	
-	public Vol() {
+	public VolBean() {
 	}
 	
-	public Vol(String titre, String description) {
-		super();
-		this.titre = titre;
-		this.description = description;
-	}
-
-	public Vol(String titre, String description, String image, Double prix) {
+	public VolBean(String titre, String description, String image, Double prix) {
 		this.titre = titre;
 		this.description = description;
 		this.image = image;
 		this.prix = prix;
 	}
 	
-	public Vol(int id, String titre, String description, String image, Double prix) {
+	public VolBean(int id, String titre, String description, String image, Double prix) {
 		this.id = id;
 		this.titre = titre;
 		this.description = description;
@@ -80,9 +65,13 @@ public class Vol {
 	public void setPrix(Double prix) {
 		this.prix = prix;
 	}
-
 	
 	
+	@Override
+	public String toString() {
+		return "Vol [id=" + id + ", titre=" + titre + ", description=" + description + ", image=" + image + ", prix="
+				+ prix + "]";
+	}
 	
 
 }
